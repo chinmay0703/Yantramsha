@@ -1,0 +1,15 @@
+.whatsapp-logo {
+    width:80px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+  

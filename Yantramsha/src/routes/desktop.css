@@ -1,0 +1,17 @@
+.card{
+    opacity: 0.9;
+    box-shadow:50px;
+}
+.custom-dropdown-menu {
+    min-width: 660px; /* Set the desired width */
+    left:50px;
+  }
+  .custom-dropdown-menu a:hover {
+    background-color: rgb(0, 123, 255);
+    color: white;
+  }
+
+  /* .overflow-autoo{
+    height:600px;
+    overflow-y: auto;
+  } */

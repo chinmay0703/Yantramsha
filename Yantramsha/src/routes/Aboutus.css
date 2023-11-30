@@ -1,0 +1,38 @@
+/* AboutUs.css */
+
+.about-us-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .about-us-container::before {
+    content: '';
+    background: url('https://images.shopcdn.co.uk/63/2f/632fc25523c2a7aa1a59d9d572bada3d/2560x1264/webp/resize?t=1701078829') center/cover no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7; /* Adjust the opacity level */
+  }
+  /* Your CSS file, e.g., styles.css */
+
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  .text-typing {
+    overflow: hidden; /* Hide the overflow content */
+    white-space: nowrap; /* Prevent line breaks */
+    animation: typing 2s steps(40) forwards; /* Adjust the duration and steps as needed */
+  }
+  
+  
+
+  
