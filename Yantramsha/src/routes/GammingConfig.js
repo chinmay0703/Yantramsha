@@ -10,9 +10,8 @@ import bgg from "../Images/73.webp"
 import e from "../Images/2.webp"
 import Footer from '../components/Footer/Footer';
 import "../routes/desktop.css"
+import { Link } from 'react-router-dom';
 function GammingConfig() {
-
-    
     const [option1, setoption1] = useState('GeForce RTX 4060 Ti 8GB');
     const [option1Price, setoption1Price] = useState(4000);
     const [option2, setoption2] = useState('ASUS® PRIME H610M-A-CSM D4 (mATX, LGA1700, DDR4, PCIe 4.0)');
@@ -20,9 +19,9 @@ function GammingConfig() {
     const [option3, setoption3] = useState('8GB PCS PRO DDR4 3200MHz (1 x 8GB)');
     const [option3Price, setoption3Price] = useState(4500);
     const [total, settotal] = useState(9200);
-    
-    const handleDropdownChange = (value,event) => {
-        event.preventDefault(); 
+
+    const handleDropdownChange = (value, event) => {
+        event.preventDefault();
         setoption1(value);
 
         if (value === "GeForce RTX 4070 12GB") {
@@ -38,8 +37,8 @@ function GammingConfig() {
 
 
 
-    const handleDropdownChangee = (value,event) => {
-        event.preventDefault(); 
+    const handleDropdownChangee = (value, event) => {
+        event.preventDefault();
         setoption2(value);
         switch (value) {
             case 'ASUS® PRIME H610M-A-CSM D4 (mATX, LGA1700, DDR4, PCIe 4.0)':
@@ -69,13 +68,13 @@ function GammingConfig() {
                 break;
         }
     };
-   
 
-    const handleDropdownChangeee = (value,event) => {
-        event.preventDefault(); 
+
+    const handleDropdownChangeee = (value, event) => {
+        event.preventDefault();
         setoption3(value);
 
-        
+
         switch (value) {
             case '16GB PCS PRO DDR4 3200MHz (1 x 16GB)':
                 setoption3Price(5500);
@@ -89,14 +88,14 @@ function GammingConfig() {
             case '32GB PCS PRO DDR4 3200MHz (2 x 16GB)':
                 setoption3Price(8500);
                 break;
-           
+
             default:
-                
+
                 break;
         }
     };
 
-    
+
     const sty = {
         position: 'relative',
         width: "500px",
@@ -121,13 +120,13 @@ function GammingConfig() {
     };
     useEffect(() => {
         window.scrollTo(0, 0); // Scroll to the top when the component mounts
-    }, []); 
+    }, []);
 
     const small = {
         width: "70px",
         height: "60px"
     };
-   
+
     const dropdownmenu = {
         width: "700px"
 
@@ -142,11 +141,11 @@ function GammingConfig() {
     const setActiveItem = (itemName) => {
         console.log(`Setting active item to ${itemName}`);
     };
-    const jkjk={
-        position:"relative",
-        left:80,
-        width:"150px",
-        height:"60px"
+    const jkjk = {
+        position: "relative",
+        left: 80,
+        width: "150px",
+        height: "60px"
 
     }
     useEffect(() => {
@@ -155,21 +154,29 @@ function GammingConfig() {
         console.log("Option 3 Price:", option3Price);
         settotal(option1Price + option2Price + option3Price);
         console.log("Total Price:", total);
-       
+
     }, [option1, option2, option3, option1Price, option2Price, option3Price]);
 
     const save = () => {
-        
+
         const calculatedTotal = option1Price + option2Price + option3Price;
 
-    
+
         settotal(calculatedTotal);
 
         localStorage.setItem("TotalAmount", total);
+        localStorage.setItem("option1", option1);
+        localStorage.setItem("option1Price", option1Price);
+        localStorage.setItem("option2", option2);
+        localStorage.setItem("option2Price", option2Price);
+        localStorage.setItem("option3", option3);
+        localStorage.setItem("option3Price", option3Price);
+
+
     };
-    
-   
-    
+
+
+
 
     useEffect(() => {
         console.log("kj");
@@ -229,7 +236,9 @@ function GammingConfig() {
                                     </div>
                                 </div>
                                 <div className='col-7'>
-                                    <button className='btn btn-warning my-3 mx-4 ' style={jkjk} onClick={save}> Continue</button>
+                                    <Link to={"/payment"}>
+                                        <button className='btn btn-warning my-3 mx-4 ' style={jkjk} onClick={save}> Buy Now</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -254,10 +263,10 @@ function GammingConfig() {
                                             >
                                             </button>
                                             <div className="dropdown-menu custom-dropdown-menu">
-                                                <a className="dropdown-item" onClick={(event) => handleDropdownChange('GeForce RTX 4070 12GB',event)}>GeForce RTX 4070 12GB</a>
-                                                <a className="dropdown-item" onClick={(event) => handleDropdownChange('GeForce RTX 4070 Ti 12GB',event)}>GeForce RTX 4070 Ti 12GB</a>
-                                                <a className="dropdown-item" onClick={(event) => handleDropdownChange('GeForce RTX 4070 Ti 16GB',event)}>GeForce RTX 4070 Ti 16GB</a>
-                                                <a className="dropdown-item" onClick={(event) => handleDropdownChange('GeForce RTX 4070 Tm 32GB',event)}>GeForce RTX 4070 Tm 32GB</a>
+                                                <a className="dropdown-item" onClick={(event) => handleDropdownChange('GeForce RTX 4070 12GB', event)}>GeForce RTX 4070 12GB</a>
+                                                <a className="dropdown-item" onClick={(event) => handleDropdownChange('GeForce RTX 4070 Ti 12GB', event)}>GeForce RTX 4070 Ti 12GB</a>
+                                                <a className="dropdown-item" onClick={(event) => handleDropdownChange('GeForce RTX 4070 Ti 16GB', event)}>GeForce RTX 4070 Ti 16GB</a>
+                                                <a className="dropdown-item" onClick={(event) => handleDropdownChange('GeForce RTX 4070 Tm 32GB', event)}>GeForce RTX 4070 Tm 32GB</a>
                                             </div>
                                         </div>
                                     </div>
@@ -280,13 +289,13 @@ function GammingConfig() {
                                             <button
                                                 className="btn btn-warning dropdown-toggle"
                                                 type="button"
-                                                data-bs-toggle="dropdown" 
+                                                data-bs-toggle="dropdown"
                                                 aria-haspopup="true"
                                                 aria-expanded="false"
                                             >
                                             </button>
                                             <div className="dropdown-menu custom-dropdown-menu">
-                                            <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangee('ASUS® PRIME H610M-A-CSM D4 (mATX, LGA1700, DDR4, PCIe 4.0)', event)}>ASUS® PRIME H610M-A-CSM D4 (mATX, LGA1700, DDR4, PCIe 4.0)</a>
+                                                <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangee('ASUS® PRIME H610M-A-CSM D4 (mATX, LGA1700, DDR4, PCIe 4.0)', event)}>ASUS® PRIME H610M-A-CSM D4 (mATX, LGA1700, DDR4, PCIe 4.0)</a>
                                                 <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangee('ASUS® PRIME B760M-K D4 (mATX, LGA1700, DDR4, PCIe 4.0)', event)}>ASUS® PRIME B760M-K D4 (mATX, LGA1700, DDR4, PCIe 4.0)</a>
                                                 <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangee('ASUS® PRIME B760-PLUS D4 (LGA1700, DDR4, PCIe 5.0)', event)}>ASUS® PRIME B760-PLUS D4 (LGA1700, DDR4, PCIe 5.0)</a>
                                                 <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangee('ASUS® TUF GAMING B760-PLUS WIFI D4 (LGA1700, DDR4, PCIe 5.0, Wi-Fi 6)', event)}>ASUS® TUF GAMING B760-PLUS WIFI D4 (LGA1700, DDR4, PCIe 5.0, Wi-Fi 6)</a>
@@ -322,10 +331,10 @@ function GammingConfig() {
                                             >
                                             </button>
                                             <div className="dropdown-menu custom-dropdown-menu">
-                                                <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangeee('16GB PCS PRO DDR4 3200MHz (1 x 16GB)',event)}>16GB PCS PRO DDR4 3200MHz (1 x 16GB)</a>
-                                                <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangeee("16GB PCS PRO DDR4 3200MHz (2 x 8GB)",event)}>16GB PCS PRO DDR4 3200MHz (2 x 8GB)</a>
-                                                <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangeee("32GB PCS PRO DDR4 3200MHz (1 x 32GB)",event)}>32GB PCS PRO DDR4 3200MHz (1 x 32GB)</a>
-                                                <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangeee("32GB PCS PRO DDR4 3200MHz (2 x 16GB)",event)}>32GB PCS PRO DDR4 3200MHz (2 x 16GB)</a>
+                                                <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangeee('16GB PCS PRO DDR4 3200MHz (1 x 16GB)', event)}>16GB PCS PRO DDR4 3200MHz (1 x 16GB)</a>
+                                                <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangeee("16GB PCS PRO DDR4 3200MHz (2 x 8GB)", event)}>16GB PCS PRO DDR4 3200MHz (2 x 8GB)</a>
+                                                <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangeee("32GB PCS PRO DDR4 3200MHz (1 x 32GB)", event)}>32GB PCS PRO DDR4 3200MHz (1 x 32GB)</a>
+                                                <a className="dropdown-item" href="#" onClick={(event) => handleDropdownChangeee("32GB PCS PRO DDR4 3200MHz (2 x 16GB)", event)}>32GB PCS PRO DDR4 3200MHz (2 x 16GB)</a>
                                             </div>
                                         </div>
                                     </div>
