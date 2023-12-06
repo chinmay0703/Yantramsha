@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import im from "../Images/p.png"
+
 function Navbar(props) {
     const navigate = useNavigate();
     const handleLogout = () => {
@@ -35,8 +36,8 @@ function Navbar(props) {
     const neet = {
         width: "60px",
         position: "relative",
-        left: -60,
-        top: 5
+
+
     };
     const tr = {
         position: "relative",
@@ -48,22 +49,8 @@ function Navbar(props) {
             <div className={`overlay ${sidebarActive ? 'visible' : ''}`}></div>
 
 
-            <div className="utility-nav d-none d-md-block ">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12 col-md-6">
-                            <p className="small"><i className="bx bx-envelope"></i> Yantramsha123@example.com | <i className="bx bx-phone"></i> +91-7620846379
-                            </p>
-                        </div>
 
-                        <div className="col-12 col-md-6 text-right">
-                            <p className="small">Free shipping on total of Rs.39999 of all products</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <nav className="navbar navbar-expand-md navbar-light bg-light main-menu" style={{ boxShadow: 'black' }}>
+            <nav className="navbar navbar-expand-md navbar-light blight main-menu"  style={{ boxShadow: 'black', borderBottom: '1px solid orange' }} >
                 <div className="container">
                     <Button
                         type="button"
@@ -78,40 +65,53 @@ function Navbar(props) {
                     <Link className="navbar-brand" to="/">
                         <div className="row">
                             <div className="col-1">
-                                <img src={im} style={neet}></img>
+                                {/* <img src={im} style={neet}></img> */}
                             </div>
                             <div className="col-1">
-                                <h3 className="font-weight-bold " style={tr}>Yantramsha</h3>
+                                <ul className="navbar-nav mx-auto">
+                                    <li className={`nav-item ${activeItem === 'Home' ? 'active' : ''}`}>
+                                        <img src={im} style={neet}></img>
+                                    </li>
+                                    <li className={`nav-item ${activeItem === 'Home' ? 'active' : ''}`}>
+                                        <Link className="nav-link text-white" to="/" onClick={() => handleItemClick('Home')}>
+                                            <h2>Yantramsha</h2>
+                                        </Link>
+                                    </li>
+                                </ul>
+                                {/* <div className="row">
+                                    <h6 className="font-weight-bold mx-3 " style={tr}>Tailor your Tech</h6>
+                                </div> */}
                             </div>
+
                         </div>
                     </Link>
-                    <nav className="navbar navbar-expand-md navbar-light bg-light sub-menu">
+                    <nav className="navbar navbar-expand-md navbar-light blight sub-menu">
                         <div className="container">
                             <div className="collapse navbar-collapse" id="navbar">
                                 <ul className="navbar-nav mx-auto">
                                     <li className={`nav-item ${activeItem === 'Home' ? 'active' : ''}`}>
-                                        <Link className="nav-link" to="/" onClick={() => handleItemClick('Home')}>
+                                        <Link className="nav-link text-white" to="/" onClick={() => handleItemClick('Home')}>
                                             Home
                                         </Link>
                                     </li>
+                                    <li className={`nav-item ${activeItem === 'AboutUs' ? 'active' : ''}`}>
+                                        <Link to="/AboutUs" className="nav-link text-white" onClick={() => handleItemClick('AboutUs')}>
+                                            About Us
+                                        </Link>
+                                    </li>
                                     <li className={`nav-item ${activeItem === 'Desktop' ? 'active' : ''}`}>
-                                        <Link className="nav-link" to="/desktop" onClick={() => handleItemClick('Desktop')}>
+                                        <Link className="nav-link text-white" to="/desktop" onClick={() => handleItemClick('Desktop')}>
                                             Desktop
                                         </Link>
                                     </li>
                                     <li className={`nav-item ${activeItem === 'Laptop' ? 'active' : ''}`}>
-                                        <Link className="nav-link" to="/laptop" onClick={() => handleItemClick('Laptop')}>
+                                        <Link className="nav-link text-white" to="/laptop" onClick={() => handleItemClick('Laptop')}>
                                             Laptop
                                         </Link>
                                     </li>
-                                    <li className={`nav-item ${activeItem === 'AboutUs' ? 'active' : ''}`}>
-                                        <Link to="/AboutUs" className="nav-link" onClick={() => handleItemClick('AboutUs')}>
-                                            About Us
-                                        </Link>
-                                    </li>
-                                    <li className={`nav-item ${activeItem === 'ContactUs' ? 'active' : ''}`}>
-                                        <Link to="/contactus" className="nav-link" onClick={() => handleItemClick('ContactUs')}>
-                                            Contact Us
+                                    <li className={`nav-item ${activeItem === 'FAQs' ? 'active' : ''}`}>
+                                        <Link className="nav-link text-white" to="/FAQs" onClick={() => handleItemClick('FAQs')}>
+                                            FAQs
                                         </Link>
                                     </li>
                                 </ul>
@@ -125,14 +125,12 @@ function Navbar(props) {
                             </li>
                             <li className="nav-item ml-md-3">
                                 {authToken ? (
-
                                     <button className="btn btn-danger" onClick={handleLogout}>
-
                                         <i className="bx bxs-user-circle mr-1"></i> Log Out
                                     </button>
                                 ) : (
                                     <Link className="btn btn-primary" to="/login">
-                                        <i className="bx bxs-user-circle mr-1"></i> Log In / Register
+                                        <i className="bx bxs-user-circle"></i> Log In
                                     </Link>
                                 )}
                             </li>
@@ -144,12 +142,10 @@ function Navbar(props) {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-
                         </div>
                     </div>
                 </div>
             </div>
-
             <nav id="sidebar" className={sidebarActive ? 'active' : ''}>
                 <div className="sidebar-header">
                     <div className="container">
@@ -169,11 +165,9 @@ function Navbar(props) {
                         </Link>
                     </li>
                     <li className={` ${activeItem === 'Products' ? 'active' : ''}`}>
-                        <Link to="/products" onClick={() => handleItemClick('Products')}>
-                            Products
-                        </Link>
+                        <Link to="/desktop" onClick={() => handleItemClick('Products')}>
+                            Desktop                        </Link>
                     </li>
-
                     <li className={` ${activeItem === 'Login' ? 'active' : ''}`}>
                         {authToken ? (
                             <Link to="/products" onClick={() => handleLogout('Log out')}>
@@ -194,6 +188,7 @@ function Navbar(props) {
                     <li><a href="/f" target="_blank" title="d"><i className="bx bxl-instagram"></i></a></li>
                 </ul>
             </nav>
+           
         </div>
     )
 }
