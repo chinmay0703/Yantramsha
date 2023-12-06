@@ -1,4 +1,6 @@
 import React from 'react'
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer/Footer';
 
 const FAQs = () => {
     const activeItem = "FAQs";
@@ -8,6 +10,11 @@ const FAQs = () => {
   return (
     <div className='App'>
         <Navbar activeItem={activeItem} setActiveItem={setActiveItem}  />
+        <div className='container'>
+
+            <h1>FAQs</h1>
+        </div>
+        <Footer></Footer>
     </div>
   )
 }
