@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const FAQs = () => {
-   const activeItem = "FAQs";
+const FAQs = () => {
+    const activeItem = "FAQs";
     const setActiveItem = (itemName) => {
         console.log(`Setting active item to ${itemName}`);
     };
@@ -11,3 +11,7 @@ export const FAQs = () => {
     </div>
   )
 }
+
+export default FAQs
+
+
