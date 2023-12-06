@@ -23,16 +23,11 @@ function Footer() {
         color: 'skyblue', // Set the color to orange
         fontSize: '30px' // Set the font size to 24 pixels (you can adjust as needed)
     };
-    const si={
-        width:"50px"
-    }
-
+    const si = {
+        width: "50px"
+    };
     return (
-
         <div>
-
-
-
             <footer className="footer-section">
                 <div className="container">
                     <div className="footer-cta pt-5 pb-5">
@@ -58,7 +53,7 @@ function Footer() {
                                 <div className="single-cta">
                                     <i className="far fa-envelope-open "></i>
                                     <div className="cta-text">
-                                        <h4 ><FaEnvelope style={orange} />&nbsp;Mail Us</h4>
+                                        <h4 ><FaEnvelope style={orange} />&nbsp;Contact Us</h4>
                                         <span>Yantramsha@info.com</span>
                                     </div>
                                 </div>
@@ -93,7 +88,23 @@ function Footer() {
                             </div>
 
                             <div className="col-xl-4 col-lg-4 col-md-6 mb-30">
-                                <img src={picc}></img>
+                                {/* <img src={picc}></img> */}
+                                <div className="footer-social-icon">
+                                    <span>Links</span>
+                                </div>
+                                <div className="row">
+                                    <div className="col-3"> </div>
+                                    <div className="col-4 ">
+                                        <h6 className="text-white text-start footer-widg" ><a href="#" style={{ color: 'white', textDecoration: 'none' }}>Finance</a></h6>
+                                        <h6 className="text-white text-start footer-widg" ><a href="#" style={{ color: 'white', textDecoration: 'none' }}>Warranty</a></h6>
+                                        <h6 className="text-white text-start footer-widg" ><a href="/FAQs" style={{ color: 'white', textDecoration: 'none' }}> FAQs</a></h6>
+                                    </div>
+                                    <div className="col-4">
+                                        <h6 className="text-white text-start footer-widg" ><a href="#" style={{ color: 'white', textDecoration: 'none' }}>AboutUs</a></h6>
+                                        <h6 className="text-white text-start footer-widg" ><a href="#" style={{ color: 'white', textDecoration: 'none' }}>Contact Us</a></h6>
+                                        <h6 className="text-white text-start footer-widg" ><a href="#" style={{ color: 'white', textDecoration: 'none' }}> Return policy</a></h6>
+                                    </div>
+                                </div>
                             </div>
                             <div className="col-xl-4 col-lg-4 col-md-6 mb-50">
                                 <div className="footer-widget">
@@ -137,11 +148,7 @@ function Footer() {
                     </div>
                 </div>
             </footer>
-
-
-
         </div>
     )
 }
-
 export default Footer;

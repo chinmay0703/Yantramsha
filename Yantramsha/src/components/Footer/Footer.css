@@ -107,6 +107,11 @@ margin-bottom: 12px;
 .footer-widget ul li a:hover{
 color: #ff5e14;
 }
+.footer-widg a:hover {
+  color: #ff5e14 !important; /* Use !important to ensure the hover color takes precedence */
+}
+
+
 .footer-widget ul li a {
 color: #878787;
 text-transform: capitalize;
