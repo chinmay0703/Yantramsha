@@ -174,7 +174,7 @@ function Home() {
       <div className="col-12 py-2 ">
         <div style={{ position: 'relative' }}>
           <img src={deal} className="w-100" alt="Today's Deal" />
-          <div className="text-start" style={{ position: 'absolute', top: '50%', left: '10%', transform: 'translate(-50%, -50%)' }}>
+          <div className="text-start" style={{ position: 'absolute', top: '50%', left: '20%', transform: 'translate(-50%, -50%)' }}>
             <h5 style={{ color: 'white' }} className="text-start"><b className="text-start">Today's Deal</b> The latest offers and promotions from Yantramsha</h5>
           </div>
         </div>
