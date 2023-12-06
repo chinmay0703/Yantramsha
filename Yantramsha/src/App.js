@@ -17,7 +17,7 @@ import LaptopGammingconfig from './routes/LaptopGammingconfig';
 import LaptopOfficeconfig from './routes/LaptopOfficeconfig';
 import FAQs from './routes/FAQs';
 import OrderSummary from './routes/OrderSummary';
-import Bill from './routes/Bill';
+
 function App() {
   return (
 
@@ -37,7 +37,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/payment" element={<OrderSummary />} />
-        <Route path="/bill" element={<Bill />} />
+       
       </Routes>
       <ChatBot></ChatBot>
       <ToastContainer
